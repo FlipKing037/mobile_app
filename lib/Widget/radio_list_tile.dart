@@ -29,8 +29,8 @@ class _RadioListTileState extends State<RadioListTileWidget> {
           itemCount: values.length,
           itemBuilder: (context, index) => MainRadioListTile(
             title: values[index],
-            selectedValue: values[2],
-            onChange: (value) {},
+            selectedValue: reason,
+            onChange: (value) => setState(() => reason = value),
           ),
         ),
         Visibility(
@@ -51,7 +51,7 @@ class _RadioListTileState extends State<RadioListTileWidget> {
 
 class MainRadioListTile extends StatelessWidget {
   final String title;
-  final String selectedValue;
+  final String? selectedValue;
   final Function(String?) onChange;
 
   const MainRadioListTile({
