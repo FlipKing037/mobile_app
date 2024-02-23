@@ -14,68 +14,23 @@ class _RadioListTileState extends State<RadioListTileWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        RadioListTile(
-          contentPadding: EdgeInsetsDirectional.all(0),
-          controlAffinity: ListTileControlAffinity.trailing,
-          title: const Text('Customer was late more then 20 min'),
-          value: 'Customer was late more then 20 min',
-          groupValue: reason,
-          onChanged: (value) {
-            reason = value;
-            setState(() {});
-          },
+        const MainRadioListTile(
+          title: 'Customer was late more then 20 min',
         ),
-        RadioListTile(
-          controlAffinity: ListTileControlAffinity.trailing,
-          title: const Text('Customer does not answer'),
-          value: 'Customer does not answer',
-          groupValue: reason,
-          onChanged: (value) {
-            reason = value;
-            setState(() {});
-          },
+        const MainRadioListTile(
+          title: 'Customer does not answer',
         ),
-        RadioListTile(
-          controlAffinity: ListTileControlAffinity.trailing,
-          title: const Text('Customer refuse to receive the car'),
-          value: 'Customer refuse to receive the car',
-          groupValue: reason,
-          onChanged: (value) {
-            reason = value;
-            setState(() {});
-          },
+        const MainRadioListTile(
+          title: 'Customer refuse to receive the car',
         ),
-        RadioListTile(
-          controlAffinity: ListTileControlAffinity.trailing,
-          title: const Text('Customer did not provide the ID'),
-          value: 'Customer did not provide the ID',
-          groupValue: reason,
-          onChanged: (value) {
-            reason = value;
-            setState(() {});
-          },
+        const MainRadioListTile(
+          title: 'Customer did not provide the ID',
         ),
-        RadioListTile(
-          controlAffinity: ListTileControlAffinity.trailing,
-          title: const Text('Different Person'),
-          value: 'Different Person',
-          groupValue: reason,
-          onChanged: (value) {
-            reason = value;
-            setState(() {});
-          },
+        const MainRadioListTile(
+          title: 'Different Person',
         ),
-        RadioListTile(
-          contentPadding: EdgeInsetsDirectional.all(0),
-          controlAffinity: ListTileControlAffinity.trailing,
-          title: const Text('Other'),
-          value: 'Other',
-          groupValue: reason,
-          onChanged: (value) {
-            reason = value;
-            visible = true;
-            setState(() {});
-          },
+        const MainRadioListTile(
+          title: 'Other',
         ),
         Visibility(
           visible: true,
@@ -94,14 +49,16 @@ class _RadioListTileState extends State<RadioListTileWidget> {
 }
 
 class MainRadioListTile extends StatelessWidget {
-  const MainRadioListTile({super.key});
+  final String title;
+
+  const MainRadioListTile({super.key, required this.title});
 
   @override
   Widget build(context) {
     return RadioListTile(
-      contentPadding: EdgeInsetsDirectional.all(0),
+      contentPadding: const EdgeInsetsDirectional.all(0),
       controlAffinity: ListTileControlAffinity.trailing,
-      title: const Text('Customer was late more then 20 min'),
+      title: Text(title),
       value: 'Customer was late more then 20 min',
       groupValue: '',
       onChanged: (value) {},
