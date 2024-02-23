@@ -18,7 +18,7 @@ class _RadioListTileState extends State<RadioListTileWidget> {
   ];
 
   String? reason;
-  bool visible = true;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,7 +34,7 @@ class _RadioListTileState extends State<RadioListTileWidget> {
           ),
         ),
         Visibility(
-          visible: true,
+          visible: reason == values.last,
           child: TextFormField(
             keyboardType: TextInputType.multiline,
             maxLines: 3,
