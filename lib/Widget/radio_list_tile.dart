@@ -37,9 +37,9 @@ class _RadioListTileState extends State<RadioListTileWidget> {
           child: TextFormField(
             keyboardType: TextInputType.multiline,
             maxLines: 3,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Add Reason',
-              border: const OutlineInputBorder(),
+              border: OutlineInputBorder(),
             ),
           ),
         )
@@ -59,7 +59,7 @@ class MainRadioListTile extends StatelessWidget {
       contentPadding: const EdgeInsetsDirectional.all(0),
       controlAffinity: ListTileControlAffinity.trailing,
       title: Text(title),
-      value: 'Customer was late more then 20 min',
+      value: title,
       groupValue: '',
       onChanged: (value) {},
     );
