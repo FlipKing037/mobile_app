@@ -30,6 +30,7 @@ class _RadioListTileState extends State<RadioListTileWidget> {
           itemBuilder: (context, index) => MainRadioListTile(
             title: values[index],
             selectedValue: values[2],
+            onChange: (value) {},
           ),
         ),
         Visibility(
@@ -51,11 +52,13 @@ class _RadioListTileState extends State<RadioListTileWidget> {
 class MainRadioListTile extends StatelessWidget {
   final String title;
   final String selectedValue;
+  final Function(String?) onChange;
 
   const MainRadioListTile({
     super.key,
     required this.title,
     required this.selectedValue,
+    required this.onChange,
   });
 
   @override
@@ -66,7 +69,7 @@ class MainRadioListTile extends StatelessWidget {
       title: Text(title),
       value: title,
       groupValue: selectedValue,
-      onChanged: (value) {},
+      onChanged: onChange,
     );
   }
 }
