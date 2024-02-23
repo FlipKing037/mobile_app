@@ -29,6 +29,7 @@ class _RadioListTileState extends State<RadioListTileWidget> {
           itemCount: values.length,
           itemBuilder: (context, index) => MainRadioListTile(
             title: values[index],
+            selectedValue: values[2],
           ),
         ),
         Visibility(
@@ -49,8 +50,13 @@ class _RadioListTileState extends State<RadioListTileWidget> {
 
 class MainRadioListTile extends StatelessWidget {
   final String title;
+  final String selectedValue;
 
-  const MainRadioListTile({super.key, required this.title});
+  const MainRadioListTile({
+    super.key,
+    required this.title,
+    required this.selectedValue,
+  });
 
   @override
   Widget build(context) {
@@ -59,7 +65,7 @@ class MainRadioListTile extends StatelessWidget {
       controlAffinity: ListTileControlAffinity.trailing,
       title: Text(title),
       value: title,
-      groupValue: '',
+      groupValue: selectedValue,
       onChanged: (value) {},
     );
   }
