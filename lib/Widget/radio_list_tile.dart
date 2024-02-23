@@ -92,3 +92,19 @@ class _RadioListTileState extends State<RadioListTileWidget> {
     );
   }
 }
+
+class MainRadioListTile extends StatelessWidget {
+  const MainRadioListTile({super.key});
+
+  @override
+  Widget build(context) {
+    return RadioListTile(
+      contentPadding: EdgeInsetsDirectional.all(0),
+      controlAffinity: ListTileControlAffinity.trailing,
+      title: const Text('Customer was late more then 20 min'),
+      value: 'Customer was late more then 20 min',
+      groupValue: '',
+      onChanged: (value) {},
+    );
+  }
+}
