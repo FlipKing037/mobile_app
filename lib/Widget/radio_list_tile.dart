@@ -8,29 +8,28 @@ class RadioListTileWidget extends StatefulWidget {
 }
 
 class _RadioListTileState extends State<RadioListTileWidget> {
+  List<String> values = [
+    'Customer was late more then 20 min',
+    'Customer does not answer',
+    'Customer refuse to receive the car',
+    'Customer did not provide the ID',
+    'Different Person',
+    'Other',
+  ];
+
   String? reason;
   bool visible = true;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const MainRadioListTile(
-          title: 'Customer was late more then 20 min',
-        ),
-        const MainRadioListTile(
-          title: 'Customer does not answer',
-        ),
-        const MainRadioListTile(
-          title: 'Customer refuse to receive the car',
-        ),
-        const MainRadioListTile(
-          title: 'Customer did not provide the ID',
-        ),
-        const MainRadioListTile(
-          title: 'Different Person',
-        ),
-        const MainRadioListTile(
-          title: 'Other',
+        ListView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: values.length,
+          itemBuilder: (context, index) => MainRadioListTile(
+            title: values[index],
+          ),
         ),
         Visibility(
           visible: true,
