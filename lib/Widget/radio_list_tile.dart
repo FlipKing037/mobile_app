@@ -35,9 +35,8 @@ class _RadioListTileState extends State<RadioListTileWidget> {
             onChange: (value) => setState(() => reason = value),
           ),
         ),
-        Visibility(
-          visible: reason == values.last,
-          child: TextFormField(
+        if (reason == values.last)
+          TextFormField(
             keyboardType: TextInputType.multiline,
             maxLines: 3,
             decoration: const InputDecoration(
@@ -45,7 +44,6 @@ class _RadioListTileState extends State<RadioListTileWidget> {
               border: OutlineInputBorder(),
             ),
           ),
-        )
       ],
     );
   }
