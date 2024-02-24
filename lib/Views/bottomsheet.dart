@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/Widget/home_view.dart';
-import 'package:mobile_app/Widget/radio_list_tile.dart';
-import 'package:mobile_app/Widget/submit_button.dart';
 
 class CancelReason extends StatelessWidget {
   const CancelReason({super.key});
@@ -12,9 +10,13 @@ class CancelReason extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
+              isScrollControlled: true,
               context: context,
               builder: (context) {
-                return const HomeView();
+                return const SizedBox(
+                  height: 650,
+                  child: HomeView(),
+                );
               },
             );
           },

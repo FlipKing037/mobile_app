@@ -27,6 +27,9 @@ class HomeView extends StatelessWidget {
                 'Cancel Reason',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
+              SizedBox(
+                height: 24,
+              ),
               RadioListTileWidget(),
               SizedBox(
                 height: 38,
